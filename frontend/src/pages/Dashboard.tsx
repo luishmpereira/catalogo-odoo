@@ -176,9 +176,9 @@ const Dashboard: React.FC = () => {
               >
                 Limpar Filtros
               </button>
-                <button onClick={printCatalog} className="flex justify-center items-center mt-2 gap-2 cursor-pointer px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors w-full">
-                  <PrinterIcon className="h-5 w-5" />Imprimir
-                </button>
+              <button onClick={printCatalog} className="flex justify-center items-center mt-2 gap-2 cursor-pointer px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors w-full">
+                <PrinterIcon className="h-5 w-5" />Imprimir
+              </button>
             </div>
           </div>
 
@@ -206,7 +206,7 @@ const Dashboard: React.FC = () => {
               </div>
             ) : (
               <>
-                <div id="products" className="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-4 gap-2 printable">
+                <div id="products" className="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-4 gap-5 printable">
                   {currentProducts.map(product => (
                     <ProductCard key={product.id} product={product} />
                   ))}
@@ -224,28 +224,7 @@ const Dashboard: React.FC = () => {
         </div>
       </main>
 
-      {/* Footer */}
-      <footer id="footer" className="bg-gray-800 text-white py-8 mt-12">
-        <div className="container mx-auto px-4">
-          <div className="flex flex-col md:flex-row justify-between items-center">
-            <div className="mb-4 md:mb-0">
-              <h2 className="text-xl font-bold">Catálogo de Produtos</h2>
-              <p className="text-gray-400 mt-1">Todos os direitos reservados &copy; {new Date().getFullYear()}</p>
-            </div>
-            <div className="flex space-x-4">
-              <a href="#" className="text-gray-400 hover:text-white transition-colors">
-                Termos de Uso
-              </a>
-              <a href="#" className="text-gray-400 hover:text-white transition-colors">
-                Política de Privacidade
-              </a>
-              <a href="#" className="text-gray-400 hover:text-white transition-colors">
-                Contato
-              </a>
-            </div>
-          </div>
-        </div>
-      </footer>
+     
     </div>
   );
 };

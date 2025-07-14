@@ -4,6 +4,8 @@ services:
       context: ./frontend
       target: dev
     container_name: frontend-dev
+    networks:
+      - network-public
     ports:
       - 5173:5173
     volumes:
@@ -15,6 +17,8 @@ services:
       context: ./backend
       target: development
     container_name: backend-dev
+    networks:
+      - network-public
     env_file:
       - .env
     ports:
@@ -23,3 +27,6 @@ services:
       - ./backend/app:/app
     environment:
       - FLASK_ENV=development
+networks:
+  network-public:
+    external: true

@@ -31,7 +31,8 @@ def auth():
     
 @app.get('/products')
 def products():
-    return jsonify({"status": "ok", "products": get_products()})
+    pricelist_id = request.args.get('pricelist_id')
+    return jsonify({"status": "ok", "products": get_products(pricelist_id)})
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000)

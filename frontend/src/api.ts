@@ -4,5 +4,5 @@ import axios from "axios";
 import { type Product } from "./types";
 
 export const fetchProducts = async (): Promise<Product[]> => {
-  return (await axios.get<{ products: Product[]}>("http://localhost:5000/products")).data.products
+  return (await axios.get<{ products: Product[]}>("http://localhost:5000/products?pricelist_id=6")).data.products
 };

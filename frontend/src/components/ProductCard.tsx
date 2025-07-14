@@ -1,5 +1,6 @@
 import React from 'react';
 import { type Product } from '../types';
+import NoImage from "../assets/no-image.svg"
 
 interface ProductCardProps {
   product: Product;
@@ -16,12 +17,14 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
     return formatter.format(price);
   }
 
+  const image = product.image ? product.image : NoImage
+
   return (
-    <div className="bg-white rounded-top-left-xl overflow-hidden">
+    <div className="bg-white rounded-top-left-xl overflow-hidden break-inside-avoid mb-10">
       <div className="flex bg-red-500">
         <div className="flex-1 flex justify-center">
-          <div className="bg-gray-200 flex flex-1 rounded-top-left-xl w-24 h-32 items-center justify-center">
-            <img className="rounded-top-left-xl h-32 object-cover flex-1" src={product.image} />
+          <div className="bg-gray-200 flex flex-1 rounded-top-left-xl w-24 h-36 items-center justify-center">
+            <img className={`rounded-top-left-xl h-36  flex-1 ${!product.image ? "object-contain" : "object-cover"}`} src={image} />
           </div>
         </div>
       </div>
