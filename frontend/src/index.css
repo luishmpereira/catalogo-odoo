@@ -1,0 +1,7 @@
+@import "tailwindcss";
+
+@media print {
+    #categories, #sort, #filter, #header, #footer, #paginator {
+        display: none !important;
+    }
+}
